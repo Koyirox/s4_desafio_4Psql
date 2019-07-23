@@ -1,0 +1,81 @@
+Rapholo=# CREATE DATABASE movies;
+CREATE DATABASE
+Rapholo=# \c movies
+You are now connected to database "movies" as user "Rapholo".
+movies=# CREATE TABLE movie(id SERIAL, name(VARCHAR(50));
+movies(# SELECT * FROM movies;
+movies(# CREATE TABLE movie(
+movies(# id SERIAL,
+movies(# name varchar(50));                     ^
+movies=# CREATE TABLE movie(
+movies(# id SERIAL,
+movies(# name VARCHAR(50));
+CREATE TABLE
+movies=# SELECT * FROM movie;
+ id | name 
+----+------
+(0 rows)
+movies=# INSERT INTO movie(name)
+movies-# VALUES('El Rey León'),('Terminator ||');
+INSERT 0 2
+movies=# ALTER TABLE movie ADD COLUMN age DATE;
+ALTER TABLE
+movies=# ALTER TABLE movie ADD COLUMN gender VARCHAR(30);
+ALTER TABLE
+HINT:  You will need to rewrite or cast the expression.
+movies=# UPDATE movie SET age = '1984/01/01';
+UPDATE 2
+movies=# SELECT * FROM movie;
+ id |     name      |    age     | gender 
+----+---------------+------------+--------
+  1 | El Rey León   | 1984-01-01 | 
+  2 | Terminator || | 1984-01-01 | 
+(2 rows)
+movies=# UPDATE movie SET gender ='Drama';
+UPDATE 2
+movies=# DELETE FROM movie WHERE name ='Terminator ||';
+DELETE 1
+movies=# INSERT INTO movie (name) VALUES ('Crimen Perfecto');
+INSERT 0 1
+Rapholo@Rapholo-GL503VD:~$ psql Rapholo
+psql (10.8 (Ubuntu 10.8-0ubuntu0.18.04.1))
+Type "help" for help.
+Rapholo=# CREATE DATABASE movies;
+CREATE DATABASE
+Rapholo=# \c movies
+You are now connected to database "movies" as user "Rapholo".
+movies=# CREATE TABLE movie(id SERIAL, name(VARCHAR(50));
+movies(# SELECT * FROM movies;
+movies(# CREATE TABLE movie(
+movies(# id SERIAL,
+movies(# name varchar(50));                     ^
+movies=# CREATE TABLE movie(
+movies(# id SERIAL,
+movies(# name VARCHAR(50));
+CREATE TABLE
+movies=# SELECT * FROM movie;
+ id | name 
+----+------
+(0 rows)
+movies=# INSERT INTO movie(name)
+movies-# VALUES('El Rey León'),('Terminator ||');
+INSERT 0 2
+movies=# ALTER TABLE movie ADD COLUMN age DATE;
+ALTER TABLE
+movies=# ALTER TABLE movie ADD COLUMN gender VARCHAR(30);
+ALTER TABLE
+HINT:  You will need to rewrite or cast the expression.
+movies=# UPDATE movie SET age = '1984/01/01';
+UPDATE 2
+movies=# SELECT * FROM movie;
+ id |     name      |    age     | gender 
+----+---------------+------------+--------
+  1 | El Rey León   | 1984-01-01 | 
+  2 | Terminator || | 1984-01-01 | 
+(2 rows)
+movies=# UPDATE movie SET gender ='Drama';
+UPDATE 2
+movies=# DELETE FROM movie WHERE name ='Terminator ||';
+DELETE 1
+movies=# INSERT INTO movie (name) VALUES ('Crimen Perfecto');
+INSERT 0 1
